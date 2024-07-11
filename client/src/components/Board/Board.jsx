@@ -1,62 +1,23 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-import { fetchLists } from '../../redux/slices/listSlice';
-import { fetchCards, moveCard } from '../../redux/slices/cardSlice';
-import List from '../List/List';
+import React from 'react';
+import { DragDropContext } from 'react-beautiful-dnd';
+import useLists from '../../hooks/useLists';
+import useCards from '../../hooks/useCards';
+import useHandleDragEnd from '../../hooks/handleDragEnd';
 import CreateList from '../CreateList/CreateList';
+import ListsContainer from '../ListsContainer/ListsContainer';
 import './Board.scss';
 
 const Board = () => {
-  const dispatch = useDispatch();
-  const lists = useSelector(state => state.lists.lists);
-  const cards = useSelector(state => state.cards.cards);
-
-  useEffect(() => {
-    dispatch(fetchLists());
-    dispatch(fetchCards());
-  }, [dispatch]);
-
-  const handleDragEnd = (result) => {
-    if (!result.destination) return;
-    const { source, destination } = result;
-
-    if (source.droppableId !== destination.droppableId) {
-      dispatch(moveCard({
-        cardId: result.draggableId,
-        destinationListId: destination.droppableId
-      })).then(() => {
-        dispatch(fetchCards());
-      });
-    }
-  };
+  const lists = useLists();
+  const cards = useCards();
+  const handleDragEnd = useHandleDragEnd();
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
       <div className="board-container">
         <CreateList />
         <div className="lists-container">
-          {lists.length === 0 ? (
-            <div className="empty-board-message">
-              The board is empty. Add a list to get started.
-            </div>
-          ) : (
-            lists.map(list => (
-              <Droppable key={list._id} droppableId={list._id}>
-                {(provided) => (
-                  <div ref={provided.innerRef} {...provided.droppableProps}>
-                    <List
-                      key={list._id}
-                      list={list}
-                      provided={provided}
-                      cards={cards.filter(card => card.listId && card.listId._id === list._id)}
-                    />
-                    {provided.placeholder}
-                  </div>
-                )}
-              </Droppable>
-            ))
-          )}
+          <ListsContainer lists={lists} cards={cards} />
         </div>
       </div>
     </DragDropContext>

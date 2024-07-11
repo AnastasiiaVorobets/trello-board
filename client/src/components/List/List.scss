@@ -15,27 +15,27 @@
     margin: 0.5rem;
     display: flex;
     justify-content: end;
-  
-    button {
-      width: 100%;
-      margin: 15px;
-      padding: 0.5rem 1rem;
-      font-size: 14px;
-      cursor: pointer;
-      background-color: #ffffff;
-      border: 1px solid #ced4da;
-      border-radius: 5px;
-      color: #495057;
-      transition: background-color 0.3s ease, color 0.3s ease;
+  }
 
-      &:hover {
-        background-color: #f8f9fa;
-      }
+  &__sort-button {
+    width: 100%;
+    margin: 15px;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    color: #495057;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
-      &:focus {
-        outline: none;
-        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
-      }
+    &:hover {
+      background-color: #f8f9fa;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
     }
   }
 }

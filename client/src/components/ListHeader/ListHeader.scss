@@ -1,0 +1,15 @@
+.list-header {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #172b4d;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+}

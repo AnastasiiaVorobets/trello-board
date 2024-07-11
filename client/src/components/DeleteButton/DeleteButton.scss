@@ -1,0 +1,14 @@
+.delete-button {
+  font-size: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: #0056a3;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.65rem;
+  }
+}

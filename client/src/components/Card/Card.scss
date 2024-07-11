@@ -1,0 +1,29 @@
+.card {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+
+  &__header {
+    margin-bottom: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: aliceblue;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #172b4d;
+
+    @media (max-width: 768px) {
+      font-size: 0.75rem;
+    }
+  }
+}

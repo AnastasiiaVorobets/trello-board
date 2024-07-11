@@ -1,7 +1,8 @@
 .list-header {
   margin-bottom: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 
   &__title {
     margin: 0;

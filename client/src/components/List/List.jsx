@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteList } from '../../redux/slices/listSlice';
-import { sortCardsByDate } from '../../redux/slices/cardSlice';
+import { sortCardsByDate, fetchCards } from '../../redux/slices/cardSlice';
 import ListHeader from '../ListHeader/ListHeader';
 import CardsList from '../CardsList/CardsList';
 import './List.scss';
@@ -9,6 +9,10 @@ import './List.scss';
 const List = ({ list, provided, cards }) => {
   const dispatch = useDispatch();
   const [sortDirection, setSortDirection] = useState('asc');
+
+  useEffect(() => {
+    dispatch(fetchCards());
+  }, [dispatch]);
 
   const handleDeleteList = () => {
     console.log('Deleting list with ID:', list._id);

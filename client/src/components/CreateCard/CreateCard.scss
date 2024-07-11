@@ -1,40 +1,13 @@
 .create-card {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  &__input {
-    padding: 10px;
-    font-size: 0.875rem;
-    border-radius: 8px;
-    border: 1px solid #dfe1e6;
-
-    @media (max-width: 768px) {
-      font-size: 0.75rem;
-    }
-  }
-
   &__button {
-    padding: 10px 15px;
+    padding: 5px;
     border: none;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
 
     svg {
       font-size: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      padding: 8px 10px;
-      svg {
-        font-size: 0.875rem;
-      }
     }
   }
 }

@@ -1,8 +1,9 @@
 .list {
   padding: 10px;
   width: 250px;
+  border: 1px solid black;
   border-radius: 3px;
-  background-color: #ebecf0;
+  background-color: #dde2e7;
   box-shadow: 0 1px 0 rgba(9,30,66,.25);
 
   @media (max-width: 768px) {

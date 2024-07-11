@@ -1,0 +1,29 @@
+.footer {
+  padding: 20px 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  background-color: #212121;
+  color: #fff;
+
+  &__info {
+    margin-bottom: 20px;
+
+    &-item {
+      margin: 5px 0;
+    }
+  }
+
+  &__tech-stack{
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 850px) {
+  .footer {
+    flex-direction: column;
+  }
+}

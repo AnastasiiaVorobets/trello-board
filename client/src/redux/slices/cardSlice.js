@@ -29,7 +29,18 @@ const cardSlice = createSlice({
     loading: false,
     error: null,
   },
-  reducers: {},
+  reducers: {
+    sortCardsByDate: (state, action) => {
+      const { listId, direction } = action.payload;
+      state.cards = state.cards.map(card => card.listId && card.listId._id === listId ? card : null)
+        .filter(card => card !== null)
+        .sort((a, b) => {
+          const dateA = new Date(a.createdAt);
+          const dateB = new Date(b.createdAt);
+          return direction === 'asc' ? dateA - dateB : dateB - dateA;
+        }).concat(state.cards.filter(card => card.listId && card.listId._id !== listId));
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCards.pending, (state) => {
@@ -60,6 +71,6 @@ const cardSlice = createSlice({
   },
 });
 
-export const { moveCardLocal } = cardSlice.actions;
+export const { sortCardsByDate } = cardSlice.actions;
 
 export default cardSlice.reducer;

@@ -16,7 +16,6 @@ const Card = ({ card, index }) => {
     dispatch(deleteCard(card._id));
   };
 
-  const createdAt = parseDate(card.createdAt);
   const updatedAt = parseDate(card.updatedAt);
 
   return (

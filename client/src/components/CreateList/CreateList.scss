@@ -1,11 +1,12 @@
 .create-list {
+  margin: 20px;
   padding: 10px;
   width: 250px;
   display: flex;
   flex-direction: column;
   border: 1px solid #dfe1e6;
   border-radius: 3px;
-  background-color: #ebecf0;
+  background-color: #383838;
 
   @media (max-width: 768px) {
     width: 200px;
@@ -16,7 +17,7 @@
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #dfe1e6;
-    border-radius: 8px;
+    border-radius: 3px;
     font-size: 0.875rem;
     color: #172b4d;
 

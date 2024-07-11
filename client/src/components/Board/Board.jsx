@@ -34,6 +34,7 @@ const Board = () => {
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
       <div className="board-container">
+      <CreateList />
         <div className="lists-container">
           {lists.map(list => (
             <Droppable key={list._id} droppableId={list._id}>
@@ -50,7 +51,6 @@ const Board = () => {
               )}
             </Droppable>
           ))}
-          <CreateList />
         </div>
       </div>
     </DragDropContext>

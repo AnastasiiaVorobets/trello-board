@@ -17,6 +17,7 @@ const CreateList = () => {
 
   return (
     <div className="create-list">
+      <h3>Create list</h3>
       <input
         className="create-list__input"
         type="text"

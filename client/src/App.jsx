@@ -1,9 +1,17 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NotFound from './pages/NotFoundPage/NotFoundPage';
+import Dashboard from './pages/DashboardPage/DashboardPage';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Dashboard />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

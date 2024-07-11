@@ -1,0 +1,14 @@
+.not-found {
+  margin-top: 50px;
+  text-align: center;
+
+  &__title {
+    font-size: 5em;
+    color: #ff6b6b;
+  }
+
+  &__message {
+    font-size: 1.5em;
+    color: #333;
+  }
+}

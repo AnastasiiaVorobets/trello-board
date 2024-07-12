@@ -33,7 +33,7 @@ This is a Trello-like board application built with React, Redux, SCSS, JavaScrip
 - cd client
 - npm install
 - install all needed dependencies
-- npm run dev
+- npm start
 - Open http://localhost:3000/
 
 ### Backend
